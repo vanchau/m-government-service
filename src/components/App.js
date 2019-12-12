@@ -9,7 +9,7 @@ const App = () => {
   const [show, setShow] = useState("frontpage");
 
   return (
-    <Container maxWidth="sm">
+    <Container maxWidth="sm" style={{ minHeight: "100vh" }}>
       {show === "frontpage" && <FrontPage setShow={setShow} />}
       {show === "birthpage" && <BirthPage setShow={setShow} />}
       {show === "deathpage" && <DeathPage setShow={setShow} />}
