@@ -6,12 +6,6 @@ import PageActions from "./PageActions";
 const DeathPage = props => {
   const { setShow } = props;
 
-  const Header = (
-    <div>
-      <h3>Report a death</h3>
-    </div>
-  );
-
   const Footer = () => {
     return (
       <PageActions setShow={setShow} previous="frontpage" next="frontpage" />
