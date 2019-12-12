@@ -6,12 +6,20 @@ const BirthPage = props => {
 
   return (
     <Card>
-      <h1>M2 Government report service</h1>
+      <h3>M2 Government report service</h3>
       Ikävä kuulla, että teille on käynyt vahinko
-      <Button color="secondary" onClick={() => setShow("frontpage")}>
+      <Button
+        color="default"
+        variant="contained"
+        onClick={() => setShow("frontpage")}
+      >
         Back to start
       </Button>
-      <Button color="primary" onClick={() => setShow("frontpage")}>
+      <Button
+        color="primary"
+        variant="contained"
+        onClick={() => setShow("frontpage")}
+      >
         Next
       </Button>
     </Card>
