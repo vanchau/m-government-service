@@ -1,6 +1,6 @@
 import React from "react";
-import { Button, Grid } from "@material-ui/core";
 import Layout from "./Layout";
+import PageActions from "./PageActions";
 
 const BirthPage = props => {
   const { setShow } = props;
@@ -10,24 +10,11 @@ const BirthPage = props => {
       <h3>Report a birth</h3>
     </div>
   );
-  const Footer = () => (
-    <Grid container direction="row" justify="space-evenly">
-      <Button
-        color="default"
-        variant="contained"
-        onClick={() => setShow("frontpage")}
-      >
-        Back to start
-      </Button>
-      <Button
-        color="primary"
-        variant="contained"
-        onClick={() => setShow("frontpage")}
-      >
-        Next
-      </Button>
-    </Grid>
-  );
+  const Footer = () => {
+    return (
+      <PageActions setShow={setShow} previous="frontpage" next="frontpage" />
+    );
+  };
 
   return (
     <Layout header={Header}>
