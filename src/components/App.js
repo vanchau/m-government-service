@@ -7,7 +7,7 @@ import DeathPage from "./DeathPage";
 const App = () => {
   const [show, setShow] = useState('frontpage')
   const [birthInfo, setBirthInfo] = useState({
-    birthStep: '',
+    birthStep: 1,
     reporterId: '',
     motherId: '',
     fatherId: '',
@@ -17,7 +17,7 @@ const App = () => {
     gender: ''
   })
   const [deathInfo, setDeathInfo] = useState({
-    deathStep: '',
+    deathStep: 1,
     reporterId: '',
     deceasedId: '',
     timeOfDeath: ''
@@ -28,7 +28,7 @@ const App = () => {
     <>
       {show === 'frontpage' && <FrontPage setShow={setShow}/>}
       {show === 'birthpage' && <BirthPage birthInfo={birthInfo} setBirthInfo={setBirthInfo} setShow={setShow}/>}
-      {show === 'deathpage' && <DeathPage deathInfo={deathInfo} setBirthInfo={setDeathInfo} setShow={setShow}/>}
+      {show === 'deathpage' && <DeathPage deathInfo={deathInfo} setDeathInfo={setDeathInfo} setShow={setShow}/>}
     </>
   );
 };

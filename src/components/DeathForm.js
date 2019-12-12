@@ -2,7 +2,7 @@ import React from 'react';
 import { TextField } from '@material-ui/core';
 import '../css/Form.css';
 
-const Form = (props) => {
+const DeathForm = (props) => {
   const { setShow, info, setInfo } = props
 
   return (
@@ -17,4 +17,4 @@ const Form = (props) => {
   );
 }
 
-export default Form
+export default DeathForm
