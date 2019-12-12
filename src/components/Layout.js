@@ -10,7 +10,7 @@ const Layout = ({ header, children }) => {
         direction="column"
         justify="space-around"
         alignItems="center"
-        style={{ minHeight: "100%" }}
+        style={{ minHeight: "100%", padding: "10%"}}
       >
         <div>
           <h3>{header}</h3>

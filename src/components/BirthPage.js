@@ -8,7 +8,7 @@ const BirthPage = props => {
 
   const Footer = () => {
     return (
-      <PageActions setShow={setShow} previous="frontpage" next="frontpage" />
+      <PageActions info={birthInfo} setInfo={setBirthInfo} setShow={setShow}/>
     );
   };
 

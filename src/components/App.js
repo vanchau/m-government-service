@@ -7,7 +7,8 @@ import DeathPage from "./DeathPage";
 const App = () => {
   const [show, setShow] = useState('frontpage')
   const [birthInfo, setBirthInfo] = useState({
-    birthStep: 1,
+    type: 'birth',
+    step: 1,
     reporterId: '',
     motherId: '',
     fatherId: '',
@@ -17,7 +18,8 @@ const App = () => {
     gender: ''
   })
   const [deathInfo, setDeathInfo] = useState({
-    deathStep: 1,
+    type: 'death',
+    step: 1,
     reporterId: '',
     deceasedId: '',
     timeOfDeath: ''
