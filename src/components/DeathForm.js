@@ -1,10 +1,10 @@
 import React from 'react';
 import { TextField } from '@material-ui/core';
-import Report from './Report'
+import DeathReport from './DeathReport'
 import '../css/Form.css';
 
 const DeathForm = (props) => {
-  const { setShow, deathInfo, setDeathInfo } = props
+  const { deathInfo, setDeathInfo } = props
 
   const handleChange = (event) => {
     setDeathInfo({...deathInfo, [event.target.id]: event.target.value})
@@ -33,7 +33,7 @@ const DeathForm = (props) => {
   return (
     <div>
       {deathInfo.step === 1 && stepOne()}
-      {deathInfo.step === 2 && <Report info={deathInfo}/>}
+      {deathInfo.step === 2 && <DeathReport info={deathInfo}/>}
     </div>
   )
 }

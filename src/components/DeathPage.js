@@ -12,7 +12,6 @@ const DeathPage = props => {
     );
   };
 
-
   return (
     <Layout header="Report a death">
       <DeathForm deathInfo={deathInfo} setDeathInfo={setDeathInfo} />

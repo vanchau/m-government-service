@@ -1,11 +1,10 @@
 import React from 'react';
 import { TextField } from '@material-ui/core';
 import '../css/Form.css';
-import Report from './Report'
-import { __values } from 'tslib';
+import BirthReport from './BirthReport'
 
 const BirthForm = (props) => {
-  const { setShow, birthInfo, setBirthInfo } = props
+  const { birthInfo, setBirthInfo } = props
 
   const handleChange = (event) => {
     setBirthInfo({...birthInfo, [event.target.id]: event.target.value})
@@ -20,11 +19,11 @@ const BirthForm = (props) => {
           <div>
             <TextField fullWidth id="reporterId" value={birthInfo.reporterId} variant="outlined" onChange={handleChange} ></TextField>
           </div>
-          <div className="form-text">Mother's identification number *</div>
+          <div className="form-text">Identification number of the mother*</div>
           <div>
             <TextField fullWidth id="motherId" value={birthInfo.motherId} variant="outlined" onChange={handleChange} ></TextField>
           </div>
-          <div className="form-text">Father's identification number </div>
+          <div className="form-text">Identification number of the father</div>
           <div>
             <TextField fullWidth id="fatherId" value={birthInfo.fatherId} variant="outlined" onChange={handleChange} ></TextField>
           </div>
@@ -37,13 +36,17 @@ const BirthForm = (props) => {
     return(
       <div>
         <p>Please fill the fields below. Fields marked with * are mandatory for this report.</p>
-        <div className="form-text">Baby's first name *</div>
+        <div className="form-text">First name of the child *</div>
         <div>
           <TextField fullWidth id="firstName" value={birthInfo.firstName} variant="outlined" onChange={handleChange}></TextField>
         </div>
-        <div className="form-text">Baby's last name *</div>
+        <div className="form-text">Last name of the child</div>
         <div>
           <TextField fullWidth id="lastName" value={birthInfo.lastName} variant="outlined" onChange={handleChange}></TextField>
+        </div>
+        <div className="form-text">Time of birth *</div>
+        <div>
+          <TextField fullWidth id="timeOfBirth" value={birthInfo.timeOfBirth} variant="outlined" onChange={handleChange}></TextField>
         </div>
         <div className="form-text">Gender *</div>
         <div>
@@ -57,7 +60,7 @@ const BirthForm = (props) => {
     <div>
       {birthInfo.step === 1 && stepOne()}
       {birthInfo.step === 2 && stepTwo()}
-      {birthInfo.step === 3 && <Report info={birthInfo}/>}
+      {birthInfo.step === 3 && <BirthReport info={birthInfo}/>}
     </div>
   );
 }
