@@ -1,13 +1,18 @@
 import React from "react";
 import { Card, CardContent } from "@material-ui/core";
-import { PersonOutline, PersonAdd } from "@material-ui/icons";
+import { PersonOutline, PersonAdd, ContactSupport } from "@material-ui/icons";
+
 import "../css/FrontPage.css";
 import Layout from "./Layout";
 
 const FrontPage = props => {
   const { setShow } = props;
 
-  const Footer = () => <h3>If you need help, tap ? at any time.</h3>;
+  const Footer = () => (
+    <h3>
+      If you need help, tap <ContactSupport color="primary" /> at any time.
+    </h3>
+  );
 
   return (
     <Layout header="M2 government report">
