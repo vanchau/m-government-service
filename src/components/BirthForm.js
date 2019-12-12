@@ -1,5 +1,5 @@
-import React from 'react';
-import { TextField } from '@material-ui/core';
+import React, {useState} from 'react';
+import { TextField, FormControlLabel, RadioGroup, Radio } from '@material-ui/core';
 import '../css/Form.css';
 import BirthReport from './BirthReport'
 
@@ -8,6 +8,13 @@ const BirthForm = (props) => {
 
   const handleChange = (event) => {
     setBirthInfo({...birthInfo, [event.target.id]: event.target.value})
+  }
+
+  const [radioValue, setRadioValue] = useState('');
+
+  const handleRadioChange = (event) => {
+    setRadioValue(event.target.value)
+    setBirthInfo({...birthInfo, [event.target.name]: event.target.value})
   }
 
   const stepOne = () => {
@@ -47,12 +54,23 @@ const BirthForm = (props) => {
         <div className="form-text">Time of birth *</div>
         <div>
           <TextField fullWidth id="timeOfBirth" value={birthInfo.timeOfBirth} variant="outlined" onChange={handleChange}></TextField>
-        </div>
+        </div>    
         <div className="form-text">Gender *</div>
-        <div>
-          <TextField fullWidth id="gender" value={birthInfo.gender} variant="outlined" onChange={handleChange}></TextField>
+        <RadioGroup aria-label="position" name="gender" value={radioValue} onChange={handleRadioChange} row>
+          <FormControlLabel
+            value="Male"
+            control={<Radio color="primary" />}
+            label="Male"
+            labelPlacement="end"
+          />
+          <FormControlLabel
+            value="Female"
+            control={<Radio color="primary" />}
+            label="Female"
+            labelPlacement="end"
+          />
+        </RadioGroup>
         </div>
-    </div>
     )
   }
 
