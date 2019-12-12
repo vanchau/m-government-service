@@ -2,7 +2,6 @@ import React from 'react';
 import { TextField } from '@material-ui/core';
 import '../css/Form.css';
 import Report from './Report'
-import { __values } from 'tslib';
 
 const BirthForm = (props) => {
   const { setShow, birthInfo, setBirthInfo } = props
