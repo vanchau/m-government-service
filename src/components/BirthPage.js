@@ -5,7 +5,11 @@ import Layout from "./Layout";
 const BirthPage = props => {
   const { setShow } = props;
 
-  const Header = <h3>Report a birth</h3>;
+  const Header = (
+    <div>
+      <h3>Report a birth</h3>
+    </div>
+  );
   const Footer = () => (
     <Grid container direction="row" justify="space-evenly">
       <Button
