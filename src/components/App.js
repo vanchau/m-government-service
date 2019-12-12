@@ -1,11 +1,19 @@
-import React from 'react';
+import React, {useState} from 'react';
 import '../css/App.css';
+import { Container } from '@material-ui/core';
+import FrontPage from './FrontPage'
+import BirthPage from './BirthPage';
+import DeathPage from './DeathPage';
 
 const App = () => {
+  const [show, setShow] = useState('frontpage')
+
   return (
-    <div>
-      title
-    </div>
+    <Container maxWidth="sm">    
+      {show === 'frontpage' && <FrontPage setShow={setShow}/>}
+      {show === 'birthpage' && <BirthPage setShow={setShow}/>}
+      {show === 'deathpage' && <DeathPage setShow={setShow}/>}
+    </Container>
   );
 }
 
