@@ -1,11 +1,12 @@
 import React from 'react';
 import '../css/App.css';
+import { Container } from '@material-ui/core';
 
 const App = () => {
   return (
-    <div>
-      title
-    </div>
+    <Container maxWidth="sm">
+      <div>test test</div>
+    </Container>
   );
 }
 
