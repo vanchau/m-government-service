@@ -9,7 +9,7 @@ const FrontPage = (props) => {
   return (
     <div>
       <h3 className='card-text'>M Government Report</h3>
-      <Card onClick={() => setShow('birthpage')}>
+      <Card className='icon-card' onClick={() => setShow('birthpage')}>
         <CardContent>
           <PersonAdd className='card-icon'/>
           <div className='card-text'>Report a birth</div>
