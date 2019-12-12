@@ -1,17 +1,29 @@
-import React from 'react';
-import { Button } from '@material-ui/core';
-import Form from './Form'
+import React from "react";
+import { Button, Grid } from "@material-ui/core";
+import Layout from "./Layout";
+import PageActions from "./PageActions";
 
-const DeathPage = (props) => {
-  const { setShow, deathInfo, setDeathInfo } = props
+const DeathPage = props => {
+  const { setShow } = props;
 
-  return (
+  const Header = (
     <div>
-      died  <br/>
-      <Button onClick={()=> setShow('frontpage')}>Back to start</Button>
-      <Form info={deathInfo} setInfo={setDeathInfo}/>
+      <h3>Report a death</h3>
     </div>
   );
-}
 
-export default DeathPage
+  const Footer = () => {
+    return (
+      <PageActions setShow={setShow} previous="frontpage" next="frontpage" />
+    );
+  };
+
+  return (
+    <Layout header="Report a death">
+      <p>Who died and made you the reporter?</p>
+      <Footer />
+    </Layout>
+  );
+};
+
+export default DeathPage;

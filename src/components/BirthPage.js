@@ -1,17 +1,22 @@
-import React from 'react';
-import { Button } from '@material-ui/core';
-import Form from './Form'
+import React from "react";
+import Layout from "./Layout";
+import PageActions from "./PageActions";
 
-const BirthPage = (props) => {
-  const { setShow, birthInfo, setBirthInfo } = props
+const BirthPage = props => {
+  const { setShow } = props;
+
+  const Footer = () => {
+    return (
+      <PageActions setShow={setShow} previous="frontpage" next="frontpage" />
+    );
+  };
 
   return (
-    <div>
-      Ikävä kuulla, että teille on käynyt vahinko <br/>
-      <Button onClick={()=> setShow('frontpage')}>Back to start</Button>
-      <Form info={birthInfo} setInfo={setBirthInfo}/>
-    </div>
+    <Layout header="Report a birth">
+      <p>Ikävä kuulla, että teille on käynyt vahinko</p>
+      <Footer />
+    </Layout>
   );
-}
+};
 
-export default BirthPage
+export default BirthPage;
