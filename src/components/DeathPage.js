@@ -1,19 +1,21 @@
 import React from "react";
 import Layout from "./Layout";
+import DeathForm from "./DeathForm";
 import PageActions from "./PageActions";
 
 const DeathPage = props => {
-  const { setShow } = props;
+  const { setShow, deathInfo, setDeathInfo } = props;
 
   const Footer = () => {
     return (
-      <PageActions setShow={setShow} previous="frontpage" next="frontpage" />
+      <PageActions info={deathInfo} setInfo={setDeathInfo} setShow={setShow}/>
     );
   };
 
+
   return (
     <Layout header="Report a death">
-      <p>Who died and made you the reporter?</p>
+      <DeathForm deathInfo={deathInfo} setDeathInfo={setDeathInfo} />
       <Footer />
     </Layout>
   );
