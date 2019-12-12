@@ -7,11 +7,10 @@ import Layout from "./Layout";
 const FrontPage = props => {
   const { setShow } = props;
 
-  const Header = <h3>M2 government report</h3>;
   const Footer = () => <h3>If you need help, tap ? at any time.</h3>;
 
   return (
-    <Layout header={Header}>
+    <Layout header="M2 government report">
       <div>
         <Card className="icon-card" onClick={() => setShow("birthpage")}>
           <CardContent>

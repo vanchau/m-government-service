@@ -19,7 +19,7 @@ const DeathPage = props => {
   };
 
   return (
-    <Layout header={Header}>
+    <Layout header="Report a death">
       <p>Who died and made you the reporter?</p>
       <Footer />
     </Layout>

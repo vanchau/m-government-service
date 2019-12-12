@@ -12,7 +12,9 @@ const Layout = ({ header, children }) => {
         alignItems="center"
         style={{ minHeight: "100%" }}
       >
-        {header}
+        <div>
+          <h3>{header}</h3>
+        </div>
         {children}
       </Grid>
     </div>

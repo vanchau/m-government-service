@@ -5,11 +5,6 @@ import PageActions from "./PageActions";
 const BirthPage = props => {
   const { setShow } = props;
 
-  const Header = (
-    <div>
-      <h3>Report a birth</h3>
-    </div>
-  );
   const Footer = () => {
     return (
       <PageActions setShow={setShow} previous="frontpage" next="frontpage" />
@@ -17,7 +12,7 @@ const BirthPage = props => {
   };
 
   return (
-    <Layout header={Header}>
+    <Layout header="Report a birth">
       <p>Ikävä kuulla, että teille on käynyt vahinko</p>
       <Footer />
     </Layout>
