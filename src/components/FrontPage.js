@@ -1,16 +1,19 @@
 import React from "react";
 import { Card, CardContent } from "@material-ui/core";
-import { PersonOutline, PersonAdd, ContactSupport } from "@material-ui/icons";
+import { PersonOutline, PersonAdd } from "@material-ui/icons";
 
 import "../css/FrontPage.css";
 import Layout from "./Layout";
+import Help from "./Help";
 
 const FrontPage = props => {
   const { setShow } = props;
 
   const Footer = () => (
     <h3>
-      If you need help, tap <ContactSupport color="primary" /> at any time.
+      If you need help, tap{" "}
+      <Help>This icon will give you help. Tap elsewhere to close it.</Help> at
+      any time.
     </h3>
   );
 
