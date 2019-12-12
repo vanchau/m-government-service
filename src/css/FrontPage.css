@@ -1,0 +1,14 @@
+.card-icon {
+  display: block !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  font-size: 500% !important;
+ }
+
+ .card-text{
+  text-align: center;
+ }
+
+ .icon-card {
+   margin-bottom: 1rem;
+ }
