@@ -56,7 +56,7 @@ const BirthForm = (props) => {
           <TextField fullWidth id="timeOfBirth" value={birthInfo.timeOfBirth} variant="outlined" onChange={handleChange}></TextField>
         </div>    
         <div className="form-text">Gender *</div>
-        <RadioGroup aria-label="position" name="gender" value={radioValue} onChange={handleRadioChange} row>
+        <RadioGroup style={{marginBottom: '2rem'}} aria-label="position" name="gender" value={radioValue} onChange={handleRadioChange} row>
           <FormControlLabel
             value="Male"
             control={<Radio color="primary" />}
