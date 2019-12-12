@@ -1,14 +1,16 @@
 import React from 'react';
-import { Card, Button } from '@material-ui/core';
+import { Button } from '@material-ui/core';
+import Form from './Form'
 
 const BirthPage = (props) => {
-  const { setShow } = props
+  const { setShow, birthInfo, setBirthInfo } = props
 
   return (
-    <Card>
-      Ikävä kuulla, että teille on käynyt vahinko
+    <div>
+      Ikävä kuulla, että teille on käynyt vahinko <br/>
       <Button onClick={()=> setShow('frontpage')}>Back to start</Button>
-    </Card>
+      <Form info={birthInfo} setInfo={setBirthInfo}/>
+    </div>
   );
 }
 

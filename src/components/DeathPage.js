@@ -1,14 +1,16 @@
 import React from 'react';
-import {Card, Button} from '@material-ui/core';
+import { Button } from '@material-ui/core';
+import Form from './Form'
 
 const DeathPage = (props) => {
-  const { setShow } = props
+  const { setShow, deathInfo, setDeathInfo } = props
 
   return (
-    <Card>
-      died
+    <div>
+      died  <br/>
       <Button onClick={()=> setShow('frontpage')}>Back to start</Button>
-    </Card>
+      <Form info={deathInfo} setInfo={setDeathInfo}/>
+    </div>
   );
 }
 
