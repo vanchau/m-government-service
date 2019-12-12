@@ -1,21 +1,21 @@
 import React from "react";
 
-import { Container } from "@material-ui/core";
+import { Grid } from "@material-ui/core";
 
 const Layout = ({ header, children }) => {
   return (
-    <Container
-      maxWidth="sm"
-      style={{
-        minHeight: "100vh",
-        display: "flex",
-        flexDirection: "column",
-        justifyContent: "space-between"
-      }}
-    >
-      {header}
-      {children}
-    </Container>
+    <div style={{ minHeight: "100vh", display: "flex" }}>
+      <Grid
+        container
+        direction="column"
+        justify="space-around"
+        alignItems="center"
+        style={{ minHeight: "100%" }}
+      >
+        {header}
+        {children}
+      </Grid>
+    </div>
   );
 };
 

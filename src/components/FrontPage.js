@@ -7,7 +7,7 @@ import Layout from "./Layout";
 const FrontPage = props => {
   const { setShow } = props;
 
-  const Header = <h3>M Government Report</h3>;
+  const Header = <h3>M2 government report</h3>;
   const Footer = () => <h3>If you need help, tap ? at any time.</h3>;
 
   return (

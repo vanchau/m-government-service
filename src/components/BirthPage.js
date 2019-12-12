@@ -1,13 +1,13 @@
 import React from "react";
-import { Card, Button } from "@material-ui/core";
+import { Button, Grid } from "@material-ui/core";
+import Layout from "./Layout";
 
 const BirthPage = props => {
   const { setShow } = props;
 
-  return (
-    <Card>
-      <h3>M2 Government report service</h3>
-      Ikävä kuulla, että teille on käynyt vahinko
+  const Header = <h3>Report a birth</h3>;
+  const Footer = () => (
+    <Grid container direction="row" justify="space-evenly">
       <Button
         color="default"
         variant="contained"
@@ -22,7 +22,14 @@ const BirthPage = props => {
       >
         Next
       </Button>
-    </Card>
+    </Grid>
+  );
+
+  return (
+    <Layout header={Header}>
+      <p>Ikävä kuulla, että teille on käynyt vahinko</p>
+      <Footer />
+    </Layout>
   );
 };
 
