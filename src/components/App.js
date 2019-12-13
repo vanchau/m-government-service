@@ -8,6 +8,7 @@ import ThankYouPage from "./ThankYouPage";
 const App = () => {
   const [show, setShow] = useState('frontpage')
   const [type, setType] = useState('')
+  
   const [birthInfo, setBirthInfo] = useState({
     step: 1,
     reporterId: '',
@@ -18,13 +19,13 @@ const App = () => {
     timeOfBirth: '',
     gender: ''
   })
+
   const [deathInfo, setDeathInfo] = useState({
     step: 1,
     reporterId: '',
     deceasedId: '',
     timeOfDeath: ''
   })
-
 
   return (
     <>
