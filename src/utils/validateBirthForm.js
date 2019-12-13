@@ -22,18 +22,26 @@ const validateBirthForm = (values) => {
     else if (!validator.isLength(values.motherId, {min: 11, max: 11} )) {
       errors.motherId = "Identification number of the mother should be 11 numbers long."
     }
+    if (values.fatherId) {
+      if (!validator.isNumeric(values.fatherId)) {
+        errors.fatherId = 'Invalid characters in the identification number of the father. Only numbers are allowed.'
+      }
+      else if (!validator.isLength(values.fatherId, {min: 11, max: 11} )) {
+        errors.fatherId = "Identification number of the father should be 11 numbers long."
+      }
+    }
   }
   else if (values.step === 2) {
     if (!values.firstName) {
       errors.firstName = 'Please give the first name of the child.'
     }
-    else if (!validator.isAlpha(values.firstName, 'en-ZA')) {
+    else if (!values.firstName.split(' ').every(name => validator.isAlpha(name))) {
       errors.firstName = 'Invalid characters in the first name of the child. Only letters are allowed.'
     }
     if (!values.lastName) {
       errors.lastName = 'Please give the last name of the child.'
     }
-    else if (!validator.isAlpha(values.firstName, 'en-ZA')) {
+    else if (!validator.isAlpha(values.lastName, 'en-ZA')) {
       errors.lastName = 'Invalid characters in the last name of the child. Only letters are allowed.'
     }
     if (!values.timeOfBirth) {
