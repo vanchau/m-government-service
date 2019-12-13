@@ -5,6 +5,8 @@ import {
   RadioGroup,
   Radio
 } from "@material-ui/core";
+import { KeyboardDatePicker, MuiPickersUtilsProvider } from "@material-ui/pickers";
+import DateFnsUtils from '@date-io/date-fns';
 import "../css/Form.css";
 import BirthReport from "./BirthReport";
 
@@ -16,11 +18,19 @@ const BirthForm = props => {
   };
 
   const [radioValue, setRadioValue] = useState("");
+  const [calendarValue, setCalendarValue] = useState(null);
 
   const handleRadioChange = event => {
     setRadioValue(event.target.value);
     setBirthInfo({ ...birthInfo, [event.target.name]: event.target.value });
   };
+
+  const handleDateChange = date => {
+    setCalendarValue(date);
+    setBirthInfo({ ...birthInfo, timeOfBirth: date });
+  }
+
+
 
   const stepOne = () => {
     return (
@@ -92,16 +102,21 @@ const BirthForm = props => {
             onChange={handleChange}
           ></TextField>
         </div>
-        <div className="form-text">Time of birth *</div>
-        <div>
-          <TextField
-            fullWidth
-            id="timeOfBirth"
-            value={birthInfo.timeOfBirth}
-            variant="outlined"
-            onChange={handleChange}
-          ></TextField>
-        </div>
+        <div className="form-text">Date of birth *</div>
+        <MuiPickersUtilsProvider utils={DateFnsUtils}>
+          <KeyboardDatePicker
+            disableToolbar
+            variant="inline"
+            format="dd/MM/yyyy"
+            margin="normal"
+            id="date-picker-inline"
+            value={calendarValue}
+            onChange={handleDateChange}
+            KeyboardButtonProps={{
+              'aria-label': 'change date',
+            }}
+          />
+        </MuiPickersUtilsProvider>
         <div className="form-text">Gender *</div>
         <RadioGroup
           aria-label="position"

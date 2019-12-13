@@ -10,8 +10,8 @@ const DeathReport = ({ info }) => {
       <div>{info.reporterId ? info.reporterId : '-'}</div>
       <div className='report-title'>Identification of the deceased</div>
       <div>{info.deceasedId ? info.deceasedId : '-'}</div>
-      <div className='report-title'>Time of death</div>
-      <div>{info.timeOfDeath ? info.timeOfDeath : '-'}</div>
+      <div className='report-title'>Date of death</div>
+      <div>{info.timeOfDeath ? info.timeOfDeath.getDate()+'/'+(info.timeOfDeath.getMonth()+1)+'/'+info.timeOfDeath.getFullYear() : '-'}</div>
     </div>
   );
 };

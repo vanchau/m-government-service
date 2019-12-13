@@ -1,13 +1,21 @@
-import React from 'react';
+import React, {useState} from 'react';
 import { TextField } from '@material-ui/core';
+import { KeyboardDatePicker, MuiPickersUtilsProvider } from "@material-ui/pickers";
+import DateFnsUtils from '@date-io/date-fns';
 import DeathReport from './DeathReport'
 import '../css/Form.css';
 
 const DeathForm = (props) => {
   const { deathInfo, setDeathInfo } = props
+  const [calendarValue, setCalendarValue] = useState(null);
 
   const handleChange = (event) => {
     setDeathInfo({...deathInfo, [event.target.id]: event.target.value})
+  }
+
+  const handleDateChange = date => {
+    setCalendarValue(date);
+    setDeathInfo({ ...deathInfo, timeOfDeath: date });
   }
 
   const stepOne = () => {
@@ -22,10 +30,21 @@ const DeathForm = (props) => {
         <div>
           <TextField fullWidth id="deceasedId" value={deathInfo.deceasedId} variant="outlined" onChange={handleChange}></TextField>
         </div>
-        <div className="form-text">Time of death *</div>
-        <div>
-          <TextField fullWidth id="timeOfDeath" value={deathInfo.timeOfDeath} variant="outlined" onChange={handleChange}></TextField>
-        </div>
+        <div className="form-text">Date of death *</div>
+        <MuiPickersUtilsProvider utils={DateFnsUtils}>
+          <KeyboardDatePicker
+            disableToolbar
+            variant="inline"
+            format="dd/MM/yyyy"
+            margin="normal"
+            id="date-picker-inline"
+            value={calendarValue}
+            onChange={handleDateChange}
+            KeyboardButtonProps={{
+              'aria-label': 'change date',
+            }}
+          />
+        </MuiPickersUtilsProvider>
     </div>
     )
   }
