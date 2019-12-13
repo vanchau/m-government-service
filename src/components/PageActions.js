@@ -9,7 +9,7 @@ const PageActions = ({ type, info, setInfo, setShow, previousText, nextText, set
 
   const handleNext = () => {
     const validationErrors = (type === 'birth') ? validateBirthForm(info) : validateDeathForm(info)
-    if (false && Object.keys(validationErrors).length !== 0) {
+    if (Object.keys(validationErrors).length !== 0) {
       setErrors(validationErrors)
     }
     else {
