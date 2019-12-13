@@ -31,7 +31,7 @@ const DeathPage = props => {
       <Help>{deathInfo.step === 1 ?
       'Identification numbers are unique for each person and can be found from the national identity card.' 
       : 
-      'The following form will be sent to the authorities. Please check the information carefully and press confirm to send.'}
+      'The following form will be sent to the population information system. Please check the information carefully and press confirm to send.'}
       </Help>
       <ProgressBar current={deathInfo.step} total={numberOfSteps} />
       <DeathForm deathInfo={deathInfo} setDeathInfo={setDeathInfo} />
