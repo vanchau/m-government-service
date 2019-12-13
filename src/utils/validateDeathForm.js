@@ -30,7 +30,7 @@ const validateDeathForm = (values) => {
     if (!values.phone && !values.email && !values.address) {
       errors.contact = 'Please provide at least one type of contact information.'
     }
-    else if (values.phone && !validator.isNumeric(values.number)) {
+    else if (values.phone && !validator.isNumeric(values.phone)) {
       errors.contact = 'Invalid phone number. Only numbers are allowed.'
     }
     else if (values.email && !validator.isEmail(values.email)) {

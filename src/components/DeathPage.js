@@ -28,9 +28,12 @@ const DeathPage = props => {
 
   return (
     <Layout header="Report a death">
-      <Help>{deathInfo.step === 1 ?
+      <Help>
+      {deathInfo.step === 1 ?
       'Identification numbers are unique for each person and can be found from the national identity card.' 
-      : 
+      :
+      deathInfo.step === 2 ? 
+      'Contact information is needed in case of follow-up questions or further action. If you do not have any contact information of your own, you can provide the number of a community phone or the contact information of a member of your community who knows you.' :
       'The following form will be sent to the population information system. Please check the information carefully and press confirm to send.'}
       </Help>
       <ProgressBar current={deathInfo.step} total={numberOfSteps} />
