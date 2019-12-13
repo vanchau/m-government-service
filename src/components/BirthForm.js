@@ -22,7 +22,7 @@ const BirthForm = props => {
 
   const handleRadioChange = event => {
     setRadioValue(event.target.value);
-    setBirthInfo({ ...birthInfo, [event.target.name]: event.target.value });
+    setBirthInfo({ ...birthInfo, gender: event.target.value });
   };
 
   const handleDateChange = date => {
@@ -50,7 +50,7 @@ const BirthForm = props => {
               onChange={handleChange}
             ></TextField>
           </div>
-          <div className="form-text">Identification number of the mother*</div>
+          <div className="form-text">Identification number of the mother *</div>
           <div>
             <TextField
               fullWidth
@@ -120,7 +120,6 @@ const BirthForm = props => {
         <div className="form-text">Gender *</div>
         <RadioGroup
           aria-label="position"
-          name="position"
           value={radioValue}
           onChange={handleRadioChange}
           row

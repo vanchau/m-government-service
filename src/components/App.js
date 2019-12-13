@@ -3,11 +3,12 @@ import "../css/App.css";
 import FrontPage from "./FrontPage";
 import BirthPage from "./BirthPage";
 import DeathPage from "./DeathPage";
+import ThankYouPage from "./ThankYouPage";
 
 const App = () => {
   const [show, setShow] = useState('frontpage')
+  const [type, setType] = useState('')
   const [birthInfo, setBirthInfo] = useState({
-    type: 'birth',
     step: 1,
     reporterId: '',
     motherId: '',
@@ -18,7 +19,6 @@ const App = () => {
     gender: ''
   })
   const [deathInfo, setDeathInfo] = useState({
-    type: 'death',
     step: 1,
     reporterId: '',
     deceasedId: '',
@@ -28,9 +28,11 @@ const App = () => {
 
   return (
     <>
-      {show === 'frontpage' && <FrontPage setShow={setShow}/>}
-      {show === 'birthpage' && <BirthPage birthInfo={birthInfo} setBirthInfo={setBirthInfo} setShow={setShow}/>}
-      {show === 'deathpage' && <DeathPage deathInfo={deathInfo} setDeathInfo={setDeathInfo} setShow={setShow}/>}
+      {show === 'frontpage' && <FrontPage type={type} setType={setType} setShow={setShow}/>}
+      {show === 'birthpage' && <BirthPage type={type} setType={setType} birthInfo={birthInfo} setBirthInfo={setBirthInfo} setShow={setShow}/>}
+      {show === 'deathpage' && <DeathPage type={type} setType={setType} deathInfo={deathInfo} setDeathInfo={setDeathInfo} setShow={setShow}/>}
+      {(show === 'thankyoupage' && type==='birth') && <ThankYouPage type={type} setType={setType} setShow={setShow} info={birthInfo} setInfo={setBirthInfo}/>}
+      {(show === 'thankyoupage' && type==='death') && <ThankYouPage type={type} setType={setType} setShow={setShow} info={deathInfo} setInfo={setDeathInfo}/>}
     </>
   );
 };

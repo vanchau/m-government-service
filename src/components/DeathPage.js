@@ -5,13 +5,15 @@ import PageActions from "./PageActions";
 import ProgressBar from "./ProgressBar";
 
 const DeathPage = props => {
-  const { setShow, deathInfo, setDeathInfo } = props;
+  const { type, setType, setShow, deathInfo, setDeathInfo } = props;
   const numberOfSteps = 2;
 
   const Footer = ({ step }) => {
     const nextText = step === numberOfSteps ? "Confirm" : "Next";
     return (
       <PageActions
+        type={type}
+        setType={setType}
         info={deathInfo}
         setInfo={setDeathInfo}
         setShow={setShow}
@@ -26,7 +28,7 @@ const DeathPage = props => {
       <ProgressBar current={deathInfo.step} total={numberOfSteps} />
 
       <DeathForm deathInfo={deathInfo} setDeathInfo={setDeathInfo} />
-      <Footer step={deathInfo.step} />
+      <Footer type={type} setType={setType} step={deathInfo.step} />
     </Layout>
   );
 };
