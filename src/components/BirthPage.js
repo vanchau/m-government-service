@@ -5,13 +5,15 @@ import PageActions from "./PageActions";
 import ProgressBar from "./ProgressBar";
 
 const BirthPage = props => {
-  const { setShow, birthInfo, setBirthInfo } = props;
+  const { type, setType, setShow, birthInfo, setBirthInfo } = props;
   const numberOfSteps = 3;
 
   const Footer = ({ step }) => {
     const nextText = step === numberOfSteps ? "Confirm" : "Next";
     return (
       <PageActions
+        type={type}
+        setType={setType}
         info={birthInfo}
         setInfo={setBirthInfo}
         setShow={setShow}
@@ -24,8 +26,8 @@ const BirthPage = props => {
   return (
     <Layout header="Report a birth">
       <ProgressBar current={birthInfo.step} total={numberOfSteps} />
-      <BirthForm birthInfo={birthInfo} setBirthInfo={setBirthInfo} />
-      <Footer step={birthInfo.step} />
+      <BirthForm type={type} setType={setType} birthInfo={birthInfo} setBirthInfo={setBirthInfo} />
+      <Footer type={type} setType={setType} step={birthInfo.step} />
     </Layout>
   );
 };
