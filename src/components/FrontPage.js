@@ -7,7 +7,7 @@ import Layout from "./Layout";
 import Help from "./Help";
 
 const FrontPage = props => {
-  const { setShow, type, setType } = props;
+  const { setShow, setType } = props;
 
   const Footer = () => (
     <h3>
@@ -20,13 +20,11 @@ const FrontPage = props => {
   const handleClickBirth = () =>{
     setShow('birthpage')
     setType('birth')
-    console.log(type)
   }
 
   const handleClickDeath = () =>{
     setShow('deathpage')
     setType('death')
-    console.log(type)
   }
 
   return (

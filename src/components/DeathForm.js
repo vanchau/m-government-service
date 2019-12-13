@@ -43,6 +43,7 @@ const DeathForm = (props) => {
               'aria-label': 'change date',
             }}
             fullWidth
+            maxDate = {new Date()}
           />
         </MuiPickersUtilsProvider>
     </div>

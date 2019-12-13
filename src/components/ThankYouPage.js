@@ -41,7 +41,7 @@ const ThankYouPage = props => {
     
     return(
       <Grid container direction="row" justify="center" style={{marginTop: "3rem"}}>
-        <Button color="primary" variant="contained" onClick={handleClick} style={{width: "7rem"}}>
+        <Button color="primary" variant="contained" onClick={handleClick} style={{width: "12rem"}}>
           Back to start
         </Button>
       </Grid>
