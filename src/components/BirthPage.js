@@ -28,7 +28,14 @@ const BirthPage = props => {
 
   return (
     <Layout header="Report a birth">
-      <Help>Identification numbers are unique for each person and can be found from the national identity card.</Help>
+      <Help>
+        {birthInfo.step === 1 ?
+        'Identification numbers are unique for each person and can be found from the national identity card.' 
+        : 
+        birthInfo.step === 2 ?
+        'You can give multiple first names by separating them with a space, for example "Adilah Thandiwe".' : 
+        'The following form will be sent to the authorities. Please check the information carefully and press confirm to send.'}
+      </Help>
       <ProgressBar current={birthInfo.step} total={numberOfSteps} />
       <BirthForm type={type} setType={setType} birthInfo={birthInfo} setBirthInfo={setBirthInfo} />
       {Object.keys(errors).length !== 0 && <p style={{color: 'red', fontSize: '10', marginTop: '2rem'}}>{errors[Object.keys(errors)[0]]}</p>}

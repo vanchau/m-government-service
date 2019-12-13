@@ -3,6 +3,7 @@ import Layout from "./Layout";
 import DeathForm from "./DeathForm";
 import PageActions from "./PageActions";
 import ProgressBar from "./ProgressBar";
+import Help from "./Help";
 
 const DeathPage = props => {
   const { type, setType, setShow, deathInfo, setDeathInfo } = props;
@@ -27,6 +28,11 @@ const DeathPage = props => {
 
   return (
     <Layout header="Report a death">
+      <Help>{deathInfo.step === 1 ?
+      'Identification numbers are unique for each person and can be found from the national identity card.' 
+      : 
+      'The following form will be sent to the authorities. Please check the information carefully and press confirm to send.'}
+      </Help>
       <ProgressBar current={deathInfo.step} total={numberOfSteps} />
       <DeathForm deathInfo={deathInfo} setDeathInfo={setDeathInfo} />
       {Object.keys(errors).length !== 0 && <p style={{color: 'red', fontSize: '10', marginTop: '2rem'}}>{errors[Object.keys(errors)[0]]}</p>}

@@ -5,7 +5,7 @@ import '../css/Report.css'
 const BirthReport = ({ info }) => {
   return (
     <div>
-      <div>Please confirm the information below. In case of mistakes, go to previous screens to correct them.</div>
+      <p>Please confirm the information below. In case of mistakes, go to previous screens to correct them.</p>
       <br/>
       <div className='report-title'>Identification number of the reporter</div>
       <div>{info.reporterId ? info.reporterId : '-'}</div>

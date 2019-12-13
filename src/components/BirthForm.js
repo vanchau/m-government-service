@@ -83,7 +83,7 @@ const BirthForm = props => {
           Please fill the fields below. Fields marked with * are mandatory for
           this report.
         </p>
-        <div className="form-text">First name of the child *</div>
+        <div className="form-text">First name(s) of the child *</div>
         <div>
           <TextField
             fullWidth
@@ -93,7 +93,7 @@ const BirthForm = props => {
             onChange={handleChange}
           ></TextField>
         </div>
-        <div className="form-text">Last name of the child</div>
+        <div className="form-text">Last name of the child *</div>
         <div>
           <TextField
             fullWidth

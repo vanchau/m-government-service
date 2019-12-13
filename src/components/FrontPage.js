@@ -28,7 +28,7 @@ const FrontPage = props => {
   }
 
   return (
-    <Layout header="M-government report">
+    <Layout header="M-Government Report">
       <div>
         <Card className="icon-card" onClick={handleClickBirth}>
           <CardContent>
