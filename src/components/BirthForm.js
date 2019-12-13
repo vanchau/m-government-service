@@ -116,6 +116,7 @@ const BirthForm = props => {
               'aria-label': 'change date',
             }}
             fullWidth
+            maxDate = {new Date()}
           />
         </MuiPickersUtilsProvider>
         <div className="form-text">Gender *</div>

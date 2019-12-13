@@ -28,7 +28,7 @@ const App = () => {
 
   return (
     <>
-      {show === 'frontpage' && <FrontPage type={type} setType={setType} setShow={setShow}/>}
+      {show === 'frontpage' && <FrontPage setType={setType} setShow={setShow}/>}
       {show === 'birthpage' && <BirthPage type={type} setType={setType} birthInfo={birthInfo} setBirthInfo={setBirthInfo} setShow={setShow}/>}
       {show === 'deathpage' && <DeathPage type={type} setType={setType} deathInfo={deathInfo} setDeathInfo={setDeathInfo} setShow={setShow}/>}
       {(show === 'thankyoupage' && type==='birth') && <ThankYouPage type={type} setType={setType} setShow={setShow} info={birthInfo} setInfo={setBirthInfo}/>}
