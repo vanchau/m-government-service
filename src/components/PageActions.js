@@ -66,11 +66,11 @@ const PageActions = ({ info, setInfo, setShow, previousText, nextText }) => {
   };
 
   return (
-    <Grid container direction="row" justify="space-evenly">
-      <Button color="default" variant="contained" onClick={handlePrevious}>
+    <Grid container direction="row" justify="space-between">
+      <Button color="default" variant="contained" onClick={handlePrevious} style={{width: "7rem"}} >
         {previousText || `Previous`}
       </Button>
-      <Button color="primary" variant="contained" onClick={handleNext}>
+      <Button color="primary" variant="contained" onClick={handleNext} style={{width: "7rem"}}>
         {nextText || `Next`}
       </Button>
     </Grid>

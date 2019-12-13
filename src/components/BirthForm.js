@@ -124,6 +124,7 @@ const BirthForm = props => {
           value={radioValue}
           onChange={handleRadioChange}
           row
+          style={{marginBottom: "3rem"}}
         >
           <FormControlLabel
             value="Male"
