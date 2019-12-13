@@ -17,6 +17,8 @@ const BirthReport = ({ info }) => {
       <div>{info.firstName ? info.firstName : '-'}</div>
       <div className='report-title'>Last name of the child </div>
       <div>{info.lastName ? info.lastName : '-'}</div>
+      <div className='report-title'>Date of birth</div>
+      <div>{info.timeOfBirth ? info.timeOfBirth.getDate()+'/'+(info.timeOfBirth.getMonth()+1)+'/'+info.timeOfBirth.getFullYear() : '-'}</div>
       <div className='report-title'>Gender</div>
       <div>{info.gender ? info.gender : '-'}</div>
     </div>

@@ -17,7 +17,7 @@ const ProgressBar = ({ current, total }) => {
   const percentage = Math.round((current / total) * 100);
   return (
     <>
-      <div class="report-title">
+      <div className="report-title">
         Step {current} / {total}
       </div>
       <div className={classes.root}>
