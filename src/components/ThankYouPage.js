@@ -7,7 +7,13 @@ import "../css/ThankYouPage.css";
 
 const ThankYouPage = props => {
   const { setShow, type, setType, info, setInfo } = props;
-
+  const header = () => {
+    return(
+    type==='birth' 
+    ? "Birth successfully reported"
+    : "Death successfully reported"
+    )  
+  }
   const Footer = () => {
     const handleClick = () =>{
       setShow("frontpage");
@@ -42,11 +48,9 @@ const ThankYouPage = props => {
       )}
 
   return (
-    <Layout header="M-Government report">
-      <div>
-        {type==='birth' && <PersonAdd className="person-icon"/>}
-        {type==='death' && <PersonOutline className="person-icon"/>}
-      </div>
+    <Layout header={header()}>  
+      {type==='birth' && <PersonAdd className="person-icon"/>}
+      {type==='death' && <PersonOutline className="person-icon"/>}
       <div style={{padding:"10%"}}>Thank you for your report to the M-Government system.</div>
       <Footer/>
     </Layout>
