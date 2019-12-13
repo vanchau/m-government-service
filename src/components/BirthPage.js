@@ -8,7 +8,7 @@ import Help from "./Help";
 const BirthPage = props => {
   const { type, setType, setShow, birthInfo, setBirthInfo } = props;
   const [errors, setErrors] = useState({})
-  const numberOfSteps = 3;
+  const numberOfSteps = 4;
 
   const Footer = ({ step }) => {
     const nextText = step === numberOfSteps ? "Confirm" : "Next";

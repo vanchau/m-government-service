@@ -6,7 +6,6 @@ const BirthReport = ({ info }) => {
   return (
     <div>
       <p>Please confirm the information below. In case of mistakes, go to previous screens to correct them.</p>
-      <br/>
       <div className='report-title'>Identification number of the reporter</div>
       <div>{info.reporterId ? info.reporterId : '-'}</div>
       <div className='report-title'>Identification number of the mother</div>
@@ -21,6 +20,12 @@ const BirthReport = ({ info }) => {
       <div>{info.timeOfBirth ? info.timeOfBirth.getDate()+'/'+(info.timeOfBirth.getMonth()+1)+'/'+info.timeOfBirth.getFullYear() : '-'}</div>
       <div className='report-title'>Gender</div>
       <div>{info.gender ? info.gender : '-'}</div>
+      <div className='report-title'>Phone number</div>
+      <div>{info.phone ? info.phone : '-'}</div>
+      <div className='report-title'>E-mail</div>
+      <div>{info.email ? info.email : '-'}</div>
+      <div className='report-title'>Address</div>
+      <div>{info.address ? info.address : '-'}</div>
     </div>
   );
 };

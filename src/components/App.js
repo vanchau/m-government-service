@@ -17,14 +17,20 @@ const App = () => {
     firstName: '',
     lastName: '',
     timeOfBirth: '',
-    gender: ''
+    gender: '',
+    address: '',
+    email: '',
+    phone: ''
   })
 
   const [deathInfo, setDeathInfo] = useState({
     step: 1,
     reporterId: '',
     deceasedId: '',
-    timeOfDeath: ''
+    timeOfDeath: '',
+    address: '',
+    email: '',
+    phone: ''
   })
 
   return (

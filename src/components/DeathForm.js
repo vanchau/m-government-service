@@ -50,10 +50,53 @@ const DeathForm = (props) => {
     )
   }
 
+  const stepTwo = () => {
+    return (
+      <div>
+        <p>
+          Please provide <b>at least one</b> type of contact information.
+        </p>
+        <div>
+          <div className="form-text">Phone number</div>
+          <div>
+            <TextField
+              fullWidth
+              id="phone"
+              value={deathInfo.phone}
+              variant="outlined"
+              onChange={handleChange}
+            ></TextField>
+          </div>
+          <div className="form-text">E-mail</div>
+          <div>
+            <TextField
+              fullWidth
+              id="email"
+              value={deathInfo.email}
+              variant="outlined"
+              onChange={handleChange}
+            ></TextField>
+          </div>
+          <div className="form-text">Address</div>
+          <div>
+            <TextField
+              fullWidth
+              id="address"
+              value={deathInfo.address}
+              variant="outlined"
+              onChange={handleChange}
+            ></TextField>
+          </div>
+        </div>
+      </div>
+    );
+  };
+
   return (
     <div>
       {deathInfo.step === 1 && stepOne()}
-      {deathInfo.step === 2 && <DeathReport info={deathInfo}/>}
+      {deathInfo.step === 2 && stepTwo()}
+      {deathInfo.step === 3 && <DeathReport info={deathInfo}/>}
     </div>
   )
 }

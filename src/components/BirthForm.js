@@ -31,8 +31,6 @@ const BirthForm = props => {
     setBirthInfo({ ...birthInfo, timeOfBirth: date });
   }
 
-
-
   const stepOne = () => {
     return (
       <div>
@@ -143,11 +141,54 @@ const BirthForm = props => {
     );
   };
 
+  const stepThree = () => {
+    return (
+      <div>
+        <p>
+          Please provide <b>at least one</b> type of contact information.
+        </p>
+        <div>
+          <div className="form-text">Phone number</div>
+          <div>
+            <TextField
+              fullWidth
+              id="phone"
+              value={birthInfo.phone}
+              variant="outlined"
+              onChange={handleChange}
+            ></TextField>
+          </div>
+          <div className="form-text">E-mail</div>
+          <div>
+            <TextField
+              fullWidth
+              id="email"
+              value={birthInfo.email}
+              variant="outlined"
+              onChange={handleChange}
+            ></TextField>
+          </div>
+          <div className="form-text">Address</div>
+          <div>
+            <TextField
+              fullWidth
+              id="address"
+              value={birthInfo.address}
+              variant="outlined"
+              onChange={handleChange}
+            ></TextField>
+          </div>
+        </div>
+      </div>
+    );
+  };
+
   return (
     <div>
       {birthInfo.step === 1 && stepOne()}
       {birthInfo.step === 2 && stepTwo()}
-      {birthInfo.step === 3 && <BirthReport info={birthInfo} />}
+      {birthInfo.step === 3 && stepThree()}
+      {birthInfo.step === 4 && <BirthReport info={birthInfo} />}
     </div>
   );
 };

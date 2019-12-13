@@ -9,20 +9,20 @@ const PageActions = ({ type, info, setInfo, setShow, previousText, nextText, set
 
   const handleNext = () => {
     const validationErrors = (type === 'birth') ? validateBirthForm(info) : validateDeathForm(info)
-    if (Object.keys(validationErrors).length !== 0) {
+    if (false && Object.keys(validationErrors).length !== 0) {
       setErrors(validationErrors)
     }
     else {
       setErrors({})
-      if (type === "birth" && (info.step === 1 || info.step === 2)) {
+      if (type === "birth" && ((info.step === 1 || info.step === 2) || info.step === 3)) {
         setShow("birthpage");
         setInfo({ ...info, step: info.step + 1 });
       } 
-      if (type === "death" && info.step === 1) {
+      if (type === "death" && (info.step === 1 || info.step === 2)) {
         setShow("deathpage");
         setInfo({ ...info, step: info.step + 1 });
       }  
-      if ((type === "birth" && info.step === 3) || (type === "death" && info.step === 2)) {
+      if ((type === "birth" && info.step === 4) || (type === "death" && info.step === 3)) {
         setShow("thankyoupage");
       };
     }
@@ -30,10 +30,10 @@ const PageActions = ({ type, info, setInfo, setShow, previousText, nextText, set
 
   const handlePrevious = () => {
     setErrors({})
-    if (type === "birth" && (info.step === 2 || info.step === 3)) {
+    if (type === "birth" && ((info.step === 2 || info.step === 3) || info.step === 4 )) {
       setShow("birthpage");
       setInfo({ ...info, step: info.step - 1 });
-    } else if (type === "death" && info.step === 2) {
+    } else if (type === "death" && (info.step === 2 || info.step === 3)) {
       setShow("deathpage");
       setInfo({ ...info, step: info.step - 1 });
     }

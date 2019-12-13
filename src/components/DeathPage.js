@@ -8,7 +8,7 @@ import Help from "./Help";
 const DeathPage = props => {
   const { type, setType, setShow, deathInfo, setDeathInfo } = props;
   const [errors, setErrors] = useState({})
-  const numberOfSteps = 2;
+  const numberOfSteps = 3;
 
   const Footer = ({ step }) => {
     const nextText = step === numberOfSteps ? "Confirm" : "Next";
