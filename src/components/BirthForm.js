@@ -106,7 +106,6 @@ const BirthForm = props => {
         <MuiPickersUtilsProvider utils={DateFnsUtils}>
           <KeyboardDatePicker
             disableToolbar
-            variant="inline"
             format="dd/MM/yyyy"
             margin="normal"
             id="date-picker-inline"
@@ -115,6 +114,7 @@ const BirthForm = props => {
             KeyboardButtonProps={{
               'aria-label': 'change date',
             }}
+            fullWidth
           />
         </MuiPickersUtilsProvider>
         <div className="form-text">Gender *</div>
