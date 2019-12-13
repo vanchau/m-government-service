@@ -10,7 +10,7 @@ const FrontPage = props => {
   const { setShow, setType } = props;
 
   const Footer = () => (
-    <h3>
+    <h3 style={{padding: "10%", textAlign: "center"}}>
       If you need help, tap{" "}
       <Help>This icon will give you help. Tap elsewhere to close it.</Help> at
       any time.
