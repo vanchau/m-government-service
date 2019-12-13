@@ -12,17 +12,17 @@ const FrontPage = props => {
   const Footer = () => (
     <h3 style={{padding: "10%", textAlign: "center"}}>
       If you need help, tap{" "}
-      <Help>M-Government Service is a service for reporting a birth or a death in Namibia. To start, press Report a birth or Report a death. All provided information will be sent to the population information system. <br/><br/> Tap elsewhere to close this window.</Help> at
+      <Help>M-Government Service is a service for reporting a birth or a death in Namibia. To start, press "Report a birth" or "Report a death". All provided information will be sent to the population information system. <br/><br/> Tap elsewhere to close this window.</Help> at
       any time.
     </h3>
   );
 
-  const handleClickBirth = () =>{
+  const handleClickBirth = () => {
     setShow('birthpage')
     setType('birth')
   }
 
-  const handleClickDeath = () =>{
+  const handleClickDeath = () => {
     setShow('deathpage')
     setType('death')
   }
