@@ -51,7 +51,7 @@ const BirthForm = props => {
               onChange={handleChange}
             ></TextField>
           </div>
-          <div className="form-text">Identification number of the mother*</div>
+          <div className="form-text">Identification number of the mother *</div>
           <div>
             <TextField
               fullWidth
@@ -107,7 +107,6 @@ const BirthForm = props => {
         <MuiPickersUtilsProvider utils={DateFnsUtils}>
           <KeyboardDatePicker
             disableToolbar
-            variant="inline"
             format="dd/MM/yyyy"
             margin="normal"
             id="date-picker-inline"
@@ -116,12 +115,12 @@ const BirthForm = props => {
             KeyboardButtonProps={{
               'aria-label': 'change date',
             }}
+            fullWidth
           />
         </MuiPickersUtilsProvider>
         <div className="form-text">Gender *</div>
         <RadioGroup
           aria-label="position"
-          name="position"
           value={radioValue}
           onChange={handleRadioChange}
           row

@@ -7,7 +7,7 @@ import Layout from "./Layout";
 import Help from "./Help";
 
 const FrontPage = props => {
-  const { setShow } = props;
+  const { setShow, type, setType } = props;
 
   const Footer = () => (
     <h3>
@@ -17,16 +17,28 @@ const FrontPage = props => {
     </h3>
   );
 
+  const handleClickBirth = () =>{
+    setShow('birthpage')
+    setType('birth')
+    console.log(type)
+  }
+
+  const handleClickDeath = () =>{
+    setShow('deathpage')
+    setType('death')
+    console.log(type)
+  }
+
   return (
     <Layout header="M-government report">
       <div>
-        <Card className="icon-card" onClick={() => setShow("birthpage")}>
+        <Card className="icon-card" onClick={handleClickBirth}>
           <CardContent>
             <PersonAdd className="card-icon" />
             <div className="card-text">Report a birth</div>
           </CardContent>
         </Card>
-        <Card onClick={() => setShow("deathpage")}>
+        <Card onClick={handleClickDeath}>
           <CardContent>
             <PersonOutline className="card-icon" />
             <div className="card-text">Report a death</div>

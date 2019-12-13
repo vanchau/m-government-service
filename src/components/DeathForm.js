@@ -34,7 +34,6 @@ const DeathForm = (props) => {
         <MuiPickersUtilsProvider utils={DateFnsUtils}>
           <KeyboardDatePicker
             disableToolbar
-            variant="inline"
             format="dd/MM/yyyy"
             margin="normal"
             id="date-picker-inline"
@@ -43,6 +42,7 @@ const DeathForm = (props) => {
             KeyboardButtonProps={{
               'aria-label': 'change date',
             }}
+            fullWidth
           />
         </MuiPickersUtilsProvider>
     </div>
