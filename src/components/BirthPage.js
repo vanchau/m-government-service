@@ -34,6 +34,8 @@ const BirthPage = props => {
         : 
         birthInfo.step === 2 ?
         'You can give multiple first names by separating them with a space, for example "Adilah Thandiwe".' : 
+        birthInfo.step === 3 ?
+        'Contact information is needed in case of follow-up questions or further action. If you do not have any contact information of your own, you can provide the number of a community phone or the contact information of a member of your community who knows you.' :
         'The following form will be sent to the population information system. Please check the information carefully and press confirm to send.'}
       </Help>
       <ProgressBar current={birthInfo.step} total={numberOfSteps} />
