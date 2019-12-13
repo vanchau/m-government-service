@@ -1,10 +1,11 @@
 import React from "react";
 import { Grid, Button } from "@material-ui/core";
 import validateBirthForm from '../utils/validateBirthForm.js'
+import validateDeathForm from '../utils/validateDeathForm.js'
 
 const PageActions = ({ type, setType, info, setInfo, setShow, previousText, nextText, setErrors }) => {
   const handleNext = () => {
-    const validationErrors = validateBirthForm(info)
+    const validationErrors = (type === 'birth') ? validateBirthForm(info) : validateDeathForm(info)
     if (Object.keys(validationErrors).length !== 0) {
       setErrors(validationErrors)
     }

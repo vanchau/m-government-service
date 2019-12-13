@@ -1,10 +1,10 @@
 const validator = require('validator')
 
-const validateBirthForm = (values, step) => {
+const validateBirthForm = (values) => {
   let errors = {}
   if (values.step === 1) {
     if (!values.reporterId) {
-      errors.reporterId = 'Please give the identification number of the reporter.'
+      errors.reporterId = 'Please give your identification number.'
     }
     else if (!validator.isAlphanumeric(values.reporterId, 'en-ZA')) {
       errors.reporterId = 'Invalid characters in your identification number. Only letters a-z and numbers 0-9 are allowed.'
