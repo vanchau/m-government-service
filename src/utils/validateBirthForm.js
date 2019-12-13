@@ -10,7 +10,7 @@ const validateBirthForm = (values) => {
       errors.reporterId = 'Invalid characters in your identification number. Only numbers are allowed.'
     }
     else if (!validator.isLength(values.reporterId, {min: 11, max: 11} )) {
-      errors.reporterId = "Your identification number should be 11 characters long."
+      errors.reporterId = "Your identification number should be 11 numbers long."
     }
 
     if (!values.motherId) {
@@ -20,7 +20,7 @@ const validateBirthForm = (values) => {
       errors.motherId = 'Invalid characters in the identification number of the mother. Only numbers are allowed.'
     }
     else if (!validator.isLength(values.motherId, {min: 11, max: 11} )) {
-      errors.motherId = "Identification number of the mother should be 11 characters long."
+      errors.motherId = "Identification number of the mother should be 11 numbers long."
     }
   }
   else if (values.step === 2) {

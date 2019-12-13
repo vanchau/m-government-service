@@ -9,7 +9,7 @@ const validateDeathForm = (values) => {
     errors.reporterId = 'Invalid characters in your identification number. Only numbers are allowed.'
   }
   else if (!validator.isLength(values.reporterId, {min: 11, max: 11} )) {
-    errors.reporterId = "Your identification number should be 11 characters long."
+    errors.reporterId = "Your identification number should be 11 numbers long."
   }
 
   if (!values.deceasedId) {
@@ -19,7 +19,7 @@ const validateDeathForm = (values) => {
     errors.deceasedId = 'Invalid characters in the identification number of the deceased. Only numbers are allowed.'
   }
   else if (!validator.isLength(values.deceasedId, {min: 11, max: 11} )) {
-    errors.deceasedId = "The identification number of the deceased should be 11 characters long."
+    errors.deceasedId = "The identification number of the deceased should be 11 numbers long."
   }
   if (!values.timeOfDeath) {
     errors.timeOfDeath = 'Please enter the date of death.'
