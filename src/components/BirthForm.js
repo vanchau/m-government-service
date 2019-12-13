@@ -12,17 +12,18 @@ import BirthReport from "./BirthReport";
 
 const BirthForm = props => {
   const { birthInfo, setBirthInfo } = props;
-
-  const handleChange = event => {
-    setBirthInfo({ ...birthInfo, [event.target.id]: event.target.value });
-  };
-
   const [radioValue, setRadioValue] = useState("");
   const [calendarValue, setCalendarValue] = useState(null);
+  
+  const handleChange = event => {
+    setBirthInfo({ ...birthInfo, [event.target.id]: event.target.value });
+    
+  };
+
 
   const handleRadioChange = event => {
     setRadioValue(event.target.value);
-    setBirthInfo({ ...birthInfo, [event.target.name]: event.target.value });
+    setBirthInfo({ ...birthInfo, gender: event.target.value });
   };
 
   const handleDateChange = date => {
