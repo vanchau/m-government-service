@@ -51,7 +51,7 @@ const ThankYouPage = props => {
     <Layout header={header()}>  
       {type==='birth' && <PersonAdd className="person-icon"/>}
       {type==='death' && <PersonOutline className="person-icon"/>}
-      <div style={{padding:"10%"}}>Thank you for your report to the M-Government system.</div>
+      <div style={{padding:"10%", textAlign:"center"}}>Thank you for your report to the M-Government system.</div>
       <Footer/>
     </Layout>
   );
