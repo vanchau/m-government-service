@@ -2,7 +2,6 @@ const validator = require('validator')
 
 const validateBirthForm = (values) => {
   let errors = {}
-  console.log(values)
   if (values.step === 1) {
     if (!values.reporterId) {
       errors.reporterId = 'Please give your identification number.'
