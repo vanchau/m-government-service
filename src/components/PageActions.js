@@ -67,7 +67,6 @@ const PageActions = ({ type, info, setInfo, setShow, previousText, nextText, set
           })
     };
 
-  console.log("onko open "+open)
   return (
     <Grid container direction="row" justify="space-between" style={{marginTop: "3rem"}}>
       <Button color="default" variant="contained" onClick={() => info.step === 1 ? setOpen(true) : handlePrevious()} style={{width: "7rem"}} >
