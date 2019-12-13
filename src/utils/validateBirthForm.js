@@ -2,6 +2,7 @@ const validator = require('validator')
 
 const validateBirthForm = (values) => {
   let errors = {}
+  console.log(values)
   if (values.step === 1) {
     if (!values.reporterId) {
       errors.reporterId = 'Please give your identification number.'
@@ -41,6 +42,20 @@ const validateBirthForm = (values) => {
     }
     if (!values.gender) {
       errors.gender = 'Please enter gender.'
+    }
+  }
+  else if (values.step === 3) {
+    if ((!values.phone && !values.email) && !values.address) {
+      errors.contact = 'Please provide at least one type of contact information.'
+    }
+    else if (values.phone && !validator.isNumeric(values.phone)) {
+      errors.contact = 'Invalid phone number. Only numbers are allowed.'
+    }
+    else if (values.email && !validator.isEmail(values.email)) {
+      errors.contact = 'Invalid e-mail format. Please provide a valid e-mail address.'
+    }
+    else if (values.address && !validator.isAlphanumeric(values.address)) {
+      errors.contact = 'Invalid address. Only letters and numbers are allowed.'
     }
   }
   return errors;
