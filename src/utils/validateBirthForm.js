@@ -61,7 +61,7 @@ const validateBirthForm = (values) => {
     else if (values.email && !validator.isEmail(values.email)) {
       errors.contact = 'Invalid e-mail format. Please provide a valid e-mail address.'
     }
-    else if (values.address && !/^[\w\.-\s]+$/.test(values.address)) {
+    else if (values.address && !/^[\w\,.-\s]+$/.test(values.address)) {
       errors.contact = 'Invalid address.'
     }
   }
