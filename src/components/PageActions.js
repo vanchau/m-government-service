@@ -56,14 +56,20 @@ const PageActions = ({ type, info, setInfo, setShow, previousText, nextText, set
             firstName: "",
             lastName: "",
             timeOfBirth: "",
-            gender: ""
+            gender: "",
+            phone: "",
+            email: "",
+            address: ""
           })
         : setInfo({
             ...info,
             step: 1,
             reporterId: "",
             deceasedId: "",
-            timeOfDeath: ""
+            timeOfDeath: "",
+            phone: "",
+            email: "",
+            address: ""
           })
     };
 
