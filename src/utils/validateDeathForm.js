@@ -36,8 +36,8 @@ const validateDeathForm = (values) => {
     else if (values.email && !validator.isEmail(values.email)) {
       errors.contact = 'Invalid e-mail format. Please provide a valid e-mail address.'
     }
-    else if (values.address && !validator.isAlphanumeric(values.address)) {
-      errors.contact = 'Invalid address. Only letters and numbers are allowed.'
+    else if (values.address && !/^[\w\,.-\s]+$/.test(values.address)) {
+      errors.contact = 'Invalid address.'
     }
   }
   return errors;
