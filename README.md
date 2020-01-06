@@ -1,5 +1,5 @@
 # m-government-service
-GUI group project for the course User Interface Construction (3 members). Scaled for mobile only.
+GUI group project for the course User Interface Construction (3 members). Currently scaled for mobile phones.
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
